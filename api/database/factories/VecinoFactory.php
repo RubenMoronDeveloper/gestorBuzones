@@ -22,6 +22,8 @@ class VecinoFactory extends Factory
             'nombre' =>  fake()->name(),
             'apellido' => fake()->name(),
             'piso' => strval(fake()->randomDigit()) . Str::random(1),
+            'email' => fake()->email(),
+            'password' => fake()->password(),
         ];
     }
 }

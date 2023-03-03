@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Vecino extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre','apellido','piso'];
+    protected $fillable = ['nombre','apellido','piso','email','password'];
 }

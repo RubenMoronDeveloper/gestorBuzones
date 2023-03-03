@@ -23,14 +23,25 @@ class VecinoController extends Controller
      */
     public function store(Request $request)
     {
+
         $vecino = new Vecino();
         $vecino->nombre = $request->nombre;
         $vecino->apellido = $request->apellido;
         $vecino->piso = $request->piso;
+        $vecino->email = $request->email;
+        $vecino->password = $request->password;
 
         $vecino->save();
     }
-
+    public function login(Request $request){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $result = DB::table('vecinos')
+        ->where('vecinos.email','=',$email)
+        ->select('vecinos.email' , 'vecinos.password')
+        ->get();
+        return $result;
+    }
     /**
      * Display the specified resource.
      */
@@ -49,6 +60,8 @@ class VecinoController extends Controller
         $vecino->nombre = $request->nombre;
         $vecino->apellido = $request->apellido;
         $vecino->piso = $request->piso;
+        $vecino->email = $request->email;
+        $vecino->password = $request->password;
 
         $vecino->save();
     }

@@ -17,7 +17,8 @@ Route::controller(VecinoController::class)->group(function (){
     Route::get('/vecino/{id}','show');
     Route::put('/vecino/{id}','update');
     Route::delete('/vecino/{id}','destroy');
-    Route::get('/vecinoCartas/{id}','innerJoin');
+    Route::get('/vecino','login');
+   /*  Route::get('/vecinoCartas/{id}','innerJoin'); */
 });
 //Api carta
 Route::controller(CartaController::class)->group(function (){
@@ -26,4 +27,5 @@ Route::controller(CartaController::class)->group(function (){
     Route::get('/carta/{id}','show');
     Route::put('/carta/{id}','update');
     Route::delete('/carta/{id}','destroy');
+    Route::get('cartaList/{id}', 'listById');
 });

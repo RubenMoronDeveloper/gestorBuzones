@@ -18,6 +18,14 @@ class CartaController extends Controller
        return $cartas;
     }
 
+    public function listById(string $id){
+        $cartas = Carta::where('id_piso',$id)->get();
+        return  response ([
+            "status" => 1,
+            "msg" => "listado de cartas",
+            "cartas" =>$cartas
+        ]);
+    }
     /**
      * Store a newly created resource in storage.
      */
