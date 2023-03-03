@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams,Link } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 
 
 const endpoint = 'http://localhost:8000/api/vecino/';
-const endpointCartas = 'http://localhost:8000/api/vecinoCartas/';
+const endpointCartas = 'http://localhost:8000/api/cartaList/';
 const endpointCartaDelete = 'http://localhost:8000/api/carta/';
 
 const VecinoCartas = () => {
@@ -30,7 +30,8 @@ const VecinoCartas = () => {
   }
   const getCartasById = async () => {
     const response = await axios.get(`${endpointCartas}${id}`)
-    setCartas(response.data)
+
+    setCartas(response.data.cartas)
     
   }
   const deleteCarta = async (id) => {
@@ -64,7 +65,7 @@ const VecinoCartas = () => {
               <td>{carta.id_piso}</td>
               <td>
                 {/* <Link to={`/edit/${carta.id}`} className='btn btn-primary mr-2'> EDIT </Link> */}
-                <button onClick={() => deleteCarta(carta.id)} className='btn btn-danger'><i class="fa-solid fa-trash"></i></button>
+                <button onClick={() => deleteCarta(carta.id)} className='btn btn-danger'><i className="fa-solid fa-trash"></i></button>
               </td>
             </tr>
           ))}

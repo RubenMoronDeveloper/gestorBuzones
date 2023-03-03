@@ -33,7 +33,7 @@ const ShowVecinos = () => {
             elzieu,ayo,ivana,izan,joseph,michael,susan,vince
         ]
         const rand = Math.trunc(0 + Math.random() * (7 - 0));
-        console.log(rand)
+       
         return vecinos[rand]
     }
 

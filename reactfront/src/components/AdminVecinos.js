@@ -25,7 +25,7 @@ const AdminVecinos = () => {
         <div>
        
             <div className='d-grid gap-2'>
-                <Link to="/create" className='btn btn-success bt-lg  mb-2'><i class="fa-solid fa-square-plus fa-3x"></i></Link>
+                <Link to="/create" className='btn btn-success bt-lg  mb-2'><i className="fa-solid fa-square-plus fa-3x"></i></Link>
             </div>
             <table className='table'>
                 <thead>
@@ -34,6 +34,7 @@ const AdminVecinos = () => {
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Piso</th>
+                        <th>Mail</th>
                         <th>Editar / Borrar</th>
                     </tr>
                 </thead>
@@ -45,9 +46,10 @@ const AdminVecinos = () => {
                             <td>{vecino.nombre}</td>
                             <td>{vecino.apellido}</td>
                             <td>{vecino.piso}</td>
+                            <td>{vecino.email}</td>
                             <td>
-                                <Link to={`/edit/${vecino.id}`} className='btn btn-primary mr-2'><i class="fa-solid fa-user-pen"></i></Link>
-                                <button onClick={() => deleteVecino(vecino.id)} className='btn btn-danger'><i class="fa-solid fa-trash"></i></button>
+                                <Link to={`/edit/${vecino.id}`} className='btn btn-primary mr-2'><i className="fa-solid fa-user-pen"></i></Link>
+                                <button onClick={() => deleteVecino(vecino.id)} className='btn btn-danger'><i className="fa-solid fa-trash"></i></button>
                             </td>
                         </tr>
                     ))}

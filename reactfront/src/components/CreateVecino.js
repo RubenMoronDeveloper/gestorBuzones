@@ -8,16 +8,19 @@ const CreateVecino = () => {
 	const [nombre, setNombre] = useState('');
 	const [apellido, setApellido] = useState('');
 	const [piso, setPiso] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
 
 	const store = async (e) => {
 		e.preventDefault();
-		await axios.post(endpoint, { nombre: nombre, apellido: apellido, piso: piso })
+		await axios.post(endpoint, { nombre: nombre, apellido: apellido, piso: piso, email: email, password:password })
 		navigate('/admin')
 	}
 	return (
 		<div>
 			<form onSubmit={store}>
+				
 				<div className='mb-3'>
 					<label className='form-label'>nombre</label>
 					<input
@@ -42,6 +45,24 @@ const CreateVecino = () => {
 						value={piso}
 						onChange={(e) => setPiso(e.target.value)}
 						type='text'
+						className='form-control'
+					/>
+				</div>
+				<div className='mb-3'>
+					<label className='form-label'>email</label>
+					<input
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						type='email'
+						className='form-control'
+					/>
+				</div>
+				<div className='mb-3'>
+					<label className='form-label'>contraseña</label>
+					<input
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						type='password'
 						className='form-control'
 					/>
 				</div>
