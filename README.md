@@ -1,5 +1,5 @@
 Instalacion 
-1 - Crear base de datos  "api_gestor de buzones" mysql
+1 - Crear base de datos  "api_gestordebuzones" mysql
 2 - cd api ejecutar php artisan migrate para ejecutar las migraciones
 3 - php artisan db:seed --class==VecinosSeeder y php artisan db:seed --class=CartaSeeder para llenar las bases de datos 
 4 - php artisan serve para ejecutar el back
